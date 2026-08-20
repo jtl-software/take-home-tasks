@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Legacy state: this shared library is net8.0-windows only because the composition
+    root (ApiModuleCatalog) references the Windows module assembly to construct its
+    modules. Nothing else here needs Windows.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../JtlDemo.Abstractions/JtlDemo.Abstractions.csproj" />
+    <ProjectReference Include="../JtlDemo.Modules.Windows/JtlDemo.Modules.Windows.csproj" />
+  </ItemGroup>
+
+</Project>
